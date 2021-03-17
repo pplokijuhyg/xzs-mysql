@@ -67,10 +67,13 @@
         <span v-html="question.analyze" class="q-item-span-content" />
       </div>
       <div class="question-answer-show-item">
-        <span class="question-show-item">正确答案：</span>
+        <span :class="{'question-show-item': qType!=4}">正确答案：</span>
         <span v-if="qType==1||qType==2 ||qType==5" v-html="question.correct" class="q-item-span-content"/>
         <span v-if="qType==3" v-html="trueFalseFormatter(question)" class="q-item-span-content"/>
-        <span v-if="qType==4">{{question.correctArray}}</span>
+        <!-- <span v-if="qType==4" v-for="(item,key) in question.correctArray" :key="key" v-html="item"></span> -->
+        <ol v-if="qType==4">
+          <li v-for="(item,key) in question.correctArray" :key="key" v-html="item"></li>
+        </ol>
       </div>
     </div>
     <div v-else>
