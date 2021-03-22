@@ -56,6 +56,7 @@ pagehelper:
 spring:
   session:
     store-type: redis
+    timeout: 86400
   datasource:
     hikari:
       idle-timeout: 600000  #10 min
