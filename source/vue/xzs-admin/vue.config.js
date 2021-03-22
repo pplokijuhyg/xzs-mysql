@@ -19,7 +19,7 @@ module.exports = {
     hotOnly: false,
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: 'http://129.211.1.159:8080',
         changeOrigin: true
       }
     }
